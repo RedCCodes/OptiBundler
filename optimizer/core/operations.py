@@ -2,10 +2,10 @@ import os
 import subprocess
 import time
 import getpass
+import webbrowser
 import shutil
 import zipfile
 import json
-import webbrowser
 import requests
 import threading
 import sys
@@ -434,9 +434,14 @@ def start_talon(app: Any) -> None:
         app.resume_after_restart = "talon_tab"
         app.save_status()
         app.root.quit()
-    except Exception as e:  # noqa: F841, F821
+    except (FileNotFoundError, subprocess.CalledProcessError) as e:
         error_message = f"{app.talon_name} could not be started: {e}"
-        app.log.error("talon_start_failed=%s", e)
+        app.log.error("talon_start_failed=%s", error_message)
+        Messagebox.showerror("Error", error_message)
+        remove_startup_batch(app)
+    except Exception as e:
+        error_message = f"{app.talon_name} could not be started: {e}"
+        app.log.error("talon_start_failed=%s", error_message)
         Messagebox.showerror("Error", error_message)
         remove_startup_batch(app)
 
@@ -554,6 +559,10 @@ def start_exm(app: Any) -> None:
                 app.root.after(0, lambda: _set_ui_disabled(app, False))
         threading.Thread(target=_wait_and_enable_exm, daemon=True, name="exm-waiter").start()
         # GEMINI PATCH END: Start EXM with PID tracking
+    except Exception as e:
+        app.log.error(f"exm_start_failed={e}")
+        Messagebox.showerror("Error", f"EXM Tweaks could not be started: {e}")
+        # Kein Cursor-Reset nötig
     except Exception as e:
         app.log.error(f"exm_start_failed={e}")
         Messagebox.showerror("Error", f"EXM Tweaks could not be started: {e}")

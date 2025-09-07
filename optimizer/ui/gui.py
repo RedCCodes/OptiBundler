@@ -17,7 +17,7 @@ from ttkbootstrap import ttk as ttk
 from optimizer.core import uac
 from optimizer.core import operations
 from optimizer.core import config
-from optimizer.core import diagnostics # Added for diagnostics module
+from optimizer.core import diagnostics
 from optimizer.core.logging_setup import setup_logging, PhaseLoggerAdapter, log_event, log_exceptions, SESSION_ID
 
 class ModernOptimizerGUI:
@@ -83,6 +83,10 @@ class ModernOptimizerGUI:
 
         self._admin_win = None
         self._admin_authed = False
+
+        self._install_button = None
+        self._continue_button = None
+        self._back_button = None
 
         self.dev_skip_talon = False
         self.dev_skip_to_final_after_av = False
@@ -246,7 +250,6 @@ class ModernOptimizerGUI:
             # Method 2: Via platform module (Fallback)
             import platform
             system = platform.system()
-            release = platform.release()
             version = platform.version()
             
             if system == "Windows":
@@ -1147,7 +1150,7 @@ class ModernOptimizerGUI:
             self._diag_progress.pack_forget()
             
             # Fehlermeldung anzeigen
-            messagebox.showerror(
+            Messagebox.showerror(
                 "Diagnose-Fehler",
                 f"Fehler beim Starten der Diagnose:\n{str(e)}"
             )
