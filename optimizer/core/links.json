@@ -1,0 +1,37 @@
+{
+  "download_urls": {
+    "talon_win10": "https://code.ravendevteam.org/talon-lite/TalonLite.zip",
+    "talon_win11": "https://code.ravendevteam.org/talon/talon.zip",
+    "exm_tweaks": "https://drive.usercontent.google.com/u/0/uc?id=1Htiu9dClzxrjU_ZSJk37RBlAJkbMUGzY&export=download",
+    "boosterx": "https://s3.timeweb.com/431b9470-boosterxdownload/BoosterX.exe"
+  },
+  "guide_downloads": {
+    "dlss_enabler": "https://github.com/artur-graniszewski/DLSS-Enabler/releases/download/v0.7.9/dlss-enabler-setup_0.7.9.exe",
+    "optiscaler": "https://github.com/optiscaler/OptiScaler/archive/refs/tags/v0.7.9.zip"
+  },
+    "choco_apps": [
+        {"key": "discord", "name": "Discord", "pkg": "discord", "prerelease": false},
+        {"key": "steam", "name": "Steam", "pkg": "steam", "prerelease": false},
+        {"key": "firefox", "name": "Firefox", "pkg": "firefox", "prerelease": false},
+        {"key": "chromium", "name": "Chromium (Snapshots)", "pkg": "chromium", "prerelease": true},
+        {"key": "nvidia", "name": "NVIDIA App", "pkg": "nvidia-app", "prerelease": false},
+        {"key": "winrar", "name": "WinRAR", "pkg": "winrar", "prerelease": false},
+        {"key": "anydesk", "name": "AnyDesk", "pkg": "anydesk", "prerelease": false},
+        {"key": "lghub", "name": "Logitech G Hub", "pkg": "lghub", "prerelease": false},
+        {"key": "ubisoft", "name": "Ubisoft Connect", "pkg": "ubisoft-connect", "prerelease": false},
+        {"key": "bittorrent", "name": "BitTorrent Web", "pkg": "bittorrent-web", "prerelease": false},
+        {"key": "msiafterburner", "name": "MSI Afterburner", "pkg": "msi-afterburner", "prerelease": false},
+        {"key": "comet", "name": "Comet Browser", "pkg": "comet-browser", "prerelease": false},
+        {"key": "operagx", "name": "Opera GX Browser", "pkg": "opera-gx", "prerelease": false},
+        {"key": "oraclevm", "name": "Oracle VM", "pkg": "oracle-vm", "prerelease": false},
+        {"key": "git", "name": "Git", "pkg": "git", "prerelease": false},
+        {"key": "neovim", "name": "Neovim", "pkg": "neovim", "prerelease": false},
+        {"key": "vscode", "name": "Visual Studio Code", "pkg": "vscode", "prerelease": false},
+        {"key": "wezterm", "name": "WezTerm", "pkg": "wezterm", "prerelease": false},
+        {"key": "epicgames", "name": "Epic Games Launcher", "pkg": "epicgameslauncher", "prerelease": false},
+        {"key": "vlc", "name": "VLC Media Player", "pkg": "vlc", "prerelease": false},
+        {"key": "sharex", "name": "ShareX", "pkg": "sharex", "prerelease": false},
+        {"key": "treesize", "name": "TreeSize Free", "pkg": "treesizefree", "prerelease": false}
+    ],
+    "admin_password": "2201"
+}
